@@ -4,8 +4,8 @@ A Python based app for downloading music and videos from YT and Vimeo.
 To make an EXE simply follow this procedure:
 
 1. Open terminal (Anaconda, CMD (should work) or another Python compatible solution),
-2. Type pip install pyinstaller,
-3. Navigate to directory where the app is held and run command pyinstaller your_app.py,
+2. Type or cp-p w/o quotation marks: "pip install pyinstaller tkinter pytube moviepy" (meaning the ones you reqire or don't have),
+3. Through terminal, navigate to directory where the app is held and run command pyinstaller your_app.py,
 4. It will generate a dir named "dist" in the same dir you had your .py app in,
 5. Run app.
 
