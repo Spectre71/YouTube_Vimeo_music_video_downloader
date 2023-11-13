@@ -9,7 +9,7 @@ To make an EXE simply follow this procedure:
 4. It will generate a dir named "dist" in the same dir you had your .py app in,
 5. Run app.
 
-6. Lastly, you may find this thread helpfull in you run into trouble: https://stackoverflow.com/questions/5458048/how-can-i-make-a-python-script-standalone-executable-to-run-without-any-dependen.
+6. Lastly, you may find this thread helpfull in case you run into trouble: https://stackoverflow.com/questions/5458048/how-can-i-make-a-python-script-standalone-executable-to-run-without-any-dependen.
 
 #ATTENTION:
 
