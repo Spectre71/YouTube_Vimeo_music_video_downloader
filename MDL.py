@@ -2,7 +2,7 @@
 """
 Created on Wed Oct 19 14:59:43 2022
 
-@author: javor
+@author: Spectre71
 """
 
 #Importing necessary libraries
@@ -338,7 +338,7 @@ ex.place(x=420,y=150)
 ---------------------------------------"""
 vkno.mainloop()
 
-#Part 2: Video download section_Dej_si_duska:)
+#Part 2: Video download
 
 """ url = "link" 
 video = YouTube(url)
