@@ -17,7 +17,7 @@ The app is not complete. Core functionality is in place, but we intend to overha
 
 # Roadmap:
 
-1. Add ability to download 18+ restricted videos and music from YT **DONE**,
+1. Add ability to download 18+ restricted videos and music from YT **(DONE)**,
 2. Make handling of exceptions smoother and stabilize the app not to crash in such cases,
 3. optimize code (redundant code removal),
 4. update GUI for PC version,
