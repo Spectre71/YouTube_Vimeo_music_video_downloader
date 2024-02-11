@@ -91,7 +91,7 @@ def ofp():
     
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(17)
     write(V_strm)
     write(V_strm.title)
@@ -111,7 +111,7 @@ def tfp():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(242)
     write(V_strm)
     write(V_strm.title)
@@ -131,7 +131,7 @@ def tsp():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(18)
     write(V_strm)
     write(V_strm.title)
@@ -151,7 +151,7 @@ def fep():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(244)
     write(V_strm)
     write(V_strm.title)
@@ -171,7 +171,7 @@ def stp():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(22)
     write(V_strm)
     write(V_strm.title)
@@ -191,7 +191,7 @@ def tep():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(248)
     write(V_strm)
     write(V_strm.title)
@@ -211,7 +211,7 @@ def ffp():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(271)
     write(V_strm)
     write(V_strm.title)
@@ -231,7 +231,7 @@ def tosp():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(313)
     write(V_strm)
     write(V_strm.title)
@@ -249,7 +249,7 @@ def fttp():
    
     PTH()
 
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     V_strm=video.streams.get_by_itag(571)
     write(V_strm)
     write(V_strm.title)
@@ -270,7 +270,7 @@ def MDL():
 
     PTH()
     
-    video = YouTube(URL)
+    video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     M=video.streams.filter(only_audio=True).all()
     
     M[0].download(filename="name.mp3")
@@ -337,19 +337,3 @@ ex.place(x=420,y=150)
 - Pack in .exe file
 ---------------------------------------"""
 vkno.mainloop()
-
-#Part 2: Video download
-
-""" url = "link" 
-video = YouTube(url)
-V_strm=video.streams.get_by_itag(22)
-write(V_strm)
-write(V_strm.title)
-V_strm.download(filename="name")
-
-clip = mp.VideoFileClip(r"name.mp4")
-clip.audio.write_audiofile(r"name.mp3")
-clip.close()
-
-os.remove("name.mp4")
-"""
