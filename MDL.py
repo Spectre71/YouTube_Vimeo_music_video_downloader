@@ -8,8 +8,6 @@ Created on Wed Oct 19 14:59:43 2022
 #Importing necessary libraries
 
 from pytube import YouTube
-#from cx_Freeze import setup, Executable #?
-#import moviepy.editor as mp
 import os
 import tkinter as tk
 from tkinter import *
@@ -21,13 +19,16 @@ import urllib.request as ur
 import requests as r
 from moviepy.audio.io.AudioFileClip import AudioFileClip
 from moviepy.video.VideoClip import VideoClip
+from urllib.parse import urlparse
+from PIL import ImageTk, Image
+import io
 
 #Part 1: Incarnation (creating the GUI)
 vkno=Tk()
 con=Text(vkno,width=90,height=10)
 con.place(x=30,y=200)
 vkno.title("MVDL")
-vkno.geometry("800x400")
+vkno.geometry("800x900")
 vkno.resizable(0,0)
 
 url=tk.StringVar()
@@ -257,6 +258,32 @@ def fttp():
 
     os.rename("name.mp4",NAME+".mp4")
     
+def disp_thmb():
+    
+    URL=url.get()
+    vi=URL.replace("https://www.youtube.com/watch?v=","")
+    thu= "https://img.youtube.com/vi/"+vi+"/0.jpg"
+    write(thu)
+    
+    try:
+        with ur.urlopen(thu) as u:
+            raw_data=u.read()
+    except Exception as e:
+        write(f"No image found: {e}")
+        return
+    try:
+        image=Image.open(io.BytesIO(raw_data))
+        photo=ImageTk.PhotoImage(image)
+    except Exception as e:
+        write(f"couldn't open image: {e}")
+        return
+
+    NLabelth=tk.Label(vkno,text="Video Thumbnail: ")
+    NLabelth.place(x=350, y=400)
+    NLabelim=tk.Label(vkno, image=photo)
+    NLabelim.image=photo
+    NLabelim.place(x=150, y=450)
+    
 
 def MDL():
     
@@ -265,16 +292,18 @@ def MDL():
     write("url: "+URL)
     write("name: "+NAME)
     write("Now relax, sit back and wait for the DL to finish ;)\n")
+    
+    disp_thmb()
+    PTH()
+    
     url.set("")
     name.set("")
-
-    PTH()
     
     video = YouTube(URL,use_oauth=True,allow_oauth_cache=True)
     M=video.streams.filter(only_audio=True).all()
     
     M[0].download(filename="name.mp3")
-   
+    
     os.rename("name.mp3",NAME+".mp3")
     
 
@@ -335,5 +364,6 @@ ex.place(x=420,y=150)
 - Add ability to download from any source (currently Vimeo and Youtube)
 - Add proportionally scalable/movable buttons (OPTIONAL)
 - Pack in .exe file
+- fix os.chdir() exception when no folder is chosen (try: ...)
 ---------------------------------------"""
 vkno.mainloop()
